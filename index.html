@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - WebbyGuard</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; color: #333; }
+        h1, h2, h3 { color: #111; }
+        h1 { text-align: center; font-size: 1.8em; }
+        h2 { font-size: 1.4em; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-top: 30px;}
+        h3 { font-size: 1.2em; margin-top: 25px;}
+        .date { text-align: center; color: #555; margin-bottom: 30px; font-size: 0.9em; }
+        .section { margin-bottom: 25px; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { font-weight: 600; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .contact-info { background-color: #f9f9f9; padding: 15px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Privacy Policy for WebbyGuard</h1>
+    <p class="date">Last Updated: May 31, 2025</p>
+
+    <div class="section">
+        <h2>1. Introduction</h2>
+        <p>Welcome to WebbyGuard! This Privacy Policy explains how WebbyGuard ("the App," "we," "us," or "our") handles information when you use our AI-powered safe browser designed for children on Apple platforms (iOS, iPadOS, macOS). This policy is specifically for users in Europe and is designed to comply with the General Data Protection Regulation (GDPR).</p>
+        <p>By using WebbyGuard, you, as the parent or legal guardian setting up and configuring the app, agree to the handling of information as described in this policy.</p>
+    </div>
+
+    <div class="section">
+        <h2>2. About WebbyGuard</h2>
+        <p>WebbyGuard is a web browser that uses Artificial Intelligence (Google Gemini API) to perform real-time content safety checks on web pages. It aims to provide a safer Browse experience for children by analyzing snapshots of web content based on configurable information about the child and blocking potentially unsafe content. The App is designed to be configured by a parent or guardian.</p>
+    </div>
+
+    <div class="section">
+        <h2>3. Information We Handle</h2>
+        <p>WebbyGuard primarily processes information locally on your device or facilitates the transfer of information to third-party services based on your configuration. We do not operate our own servers to collect or store your personal data.</p>
+
+        <h3>3.1. Information You (Parent/Guardian) Provide and Configure</h3>
+        <ul>
+            <li><strong>Homepage URL:</strong> The starting web address you set for the browser. This is stored locally on your device using UserDefaults.</li>
+            <li><strong>Content Check Specification:</strong> Text you provide describing the scope of the content check and optionally some information about the child (e.g., "protect this 8-year-old from harassment, bullying, hate speech, predatory behavior, explicit material and self-harm promotion"). This information is stored locally on your device (UserDefaults) and is sent to the Google Gemini API as part of the prompt for content safety analysis.</li>
+            <li><strong>Google Gemini API Key:</strong> Your personal API key for the Google Gemini service. This is provided by you and stored securely in the Keychain on your device. It is sent with requests to the Google Gemini API to authenticate your usage of their service.</li>
+            <li><strong>Access PIN (Optional):</strong> A numerical PIN you can set to protect access to the App's settings. This PIN is stored securely in the Keychain on your device.</li>
+            <li><strong>Pushover User Key and API Token (Optional):</strong> If you choose to use Pushover for notifications, you provide your Pushover User Key and Application API Token. These are stored securely in the Keychain on your device and used to send notifications via the Pushover API.</li>
+            <li><strong>Bookmarks:</strong> Websites you choose to bookmark within the App, including their titles and URLs. These are stored locally on your device using UserDefaults.</li>
+        </ul>
+
+        <h3>3.2. Information Processed Automatically During Usage</h3>
+        <ul>
+            <li><strong>Web Content Snapshots:</strong> Periodically, the App takes a snapshot (image) of the currently visible web content. This image is processed locally (resized and compressed) and then sent as Base64 encoded data, along with your Content Check Specification and Gemini API Key, to the Google Gemini API for safety analysis. Snapshots may be temporarily stored locally for retry purposes in case of network errors but are not permanently stored by WebbyGuard.</li>
+            <li><strong>Browse Activity (Locally):</strong> The WKWebView component used by the App stores Browse history, cache, and cookies locally on your device as part of its standard operation. You can clear this data using the "Clear Web Cache" option in the App's settings. WebbyGuard itself does not transmit your Browse history to any external servers, other than the URLs of pages for which snapshots are analyzed by Gemini.</li>
+            <li><strong>Technical Data for API Calls:</strong> When WebbyGuard communicates with Google Gemini or Pushover APIs, standard technical data such as your device's IP address and request headers may be transmitted as part of the internet communication. This is handled by the respective third-party services according to their privacy policies.</li>
+        </ul>
+
+        <h3>3.3. App Functionality Settings (Stored Locally)</h3>
+        <ul>
+            <li><strong>Content Check Interval:</strong> The frequency for periodic content snapshot checks, stored locally (UserDefaults).</li>
+            <li><strong>Snapshot Glow Effect Preference:</strong> Your preference for a visual cue during snapshot checks, stored locally (UserDefaults).</li>
+            <li><strong>Video Playback Blocking Preference:</strong> Your preference for attempting to block video playback, stored locally (UserDefaults). This feature works by injecting JavaScript into web pages locally and does not involve sending additional personal data to external servers.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>4. How We Store Your Information and Security</h2>
+        <p>We prioritize the security of the information handled by WebbyGuard.</p>
+        <ul>
+            <li><strong>Local Device Storage (UserDefaults):</strong> Non-sensitive settings such as Homepage URL, Content Check Specification, check interval, glow effect preference, video blocking preference, and bookmarks are stored in UserDefaults on your device.</li>
+            <li><strong>Secure Local Device Storage (Keychain):</strong> Sensitive information such as your Google Gemini API Key, Access PIN (if set), Pushover User Key, and Pushover API Token are stored in the secure Keychain on your device.</li>
+            <li><strong>Temporary Data:</strong> Snapshots for safety checks are processed and sent to the API. A snapshot might be held temporarily for retry attempts but is not persistently stored by WebbyGuard.</li>
+        </ul>
+        <p>Access to information stored in UserDefaults and Keychain is limited to the App itself. Uninstalling the App will typically remove this locally stored data.</p>
+    </div>
+
+    <div class="section">
+        <h2>5. Third-Party Services</h2>
+        <p>WebbyGuard integrates with third-party services that you configure to enable its core functionality. Your use of these services is subject to their respective privacy policies and terms.</p>
+        <h3>5.1. Google Gemini API</h3>
+        <p>WebbyGuard uses the Google Gemini API to analyze web content snapshots for safety. To use this feature, you must provide your own Google Gemini API Key. When a safety check is performed, the App sends the snapshot image, your Content Check Specification, and your Gemini API Key to Google. Google's handling of this data is governed by Google's Privacy Policy and their API terms of service.</p>
+        <p>We encourage you to review Google's policies:
+            <ul>
+                <li>Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
+                <li>Google AI Studio and Gemini API Terms: Please refer to the terms provided by Google when obtaining your API key.</li>
+            </ul>
+        </p>
+        <h3>5.2. Pushover API (Optional)</h3>
+        <p>If you configure Pushover notifications, the App will send information such as alert messages (e.g., unsafe content detected, AI check errors), content URLs, and potentially snapshot images (if within size limits) to the Pushover API using your Pushover User Key and API Token. Pushover's handling of this data is governed by Pushover's Privacy Policy.</p>
+        <p>We encourage you to review Pushover's policies:
+             <ul>
+                <li>Pushover Privacy Policy: <a href="https://pushover.net/privacy" target="_blank">https://pushover.net/privacy</a></li>
+            </ul>
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>6. Information Processing Specific to Children</h2>
+        <p>WebbyGuard is designed for use by children, with the setup, configuration, and provision of API keys intended to be managed by a parent or legal guardian. The "Content Check Specification" you provide is used solely to tailor the AI content safety checks for the child's protection and is shared with the Google Gemini API for this purpose.</p>
+        <p>We do not knowingly collect personal information directly from children. All configurable information that might be considered personal (like the Content Check Specification or API keys linked to a parent's account) is provided by the parent or guardian during the setup process. The parent or guardian is responsible for the information entered into the App.</p>
+    </div>
+
+    <div class="section">
+        <h2>7. Your Rights Under GDPR (For Users in Europe)</h2>
+        <p>As WebbyGuard is exclusively available in Europe, we adhere to the General Data Protection Regulation (GDPR). You (or the parent/guardian acting on behalf of a child user) have the following rights regarding the personal data handled by the App:</p>
+        <ul>
+            <li><strong>Right to Access:</strong> You can access most data directly within the App's settings (e.g., homepage URL, child info, API keys, PIN, Pushover keys, bookmarks).</li>
+            <li><strong>Right to Rectification:</strong> You can modify incorrect or incomplete data directly within the App's settings.</li>
+            <li><strong>Right to Erasure ('Right to be Forgotten'):</strong> You can delete data by clearing settings fields (e.g., removing API keys, PIN, Pushover keys), deleting bookmarks, or clearing the web cache. Uninstalling the App will also remove all locally stored data. For data sent to third-party services (Google Gemini, Pushover), you will need to refer to their policies for erasure.</li>
+            <li><strong>Right to Restrict Processing:</strong> You can restrict processing by, for example, disabling features or not providing optional information (like Pushover keys).</li>
+            <li><strong>Right to Data Portability:</strong> For data stored locally and provided by you (like bookmarks or settings text fields), you can manually copy this information.</li>
+            <li><strong>Right to Object:</strong> You can object to processing by choosing not to use certain features or the App itself.</li>
+            <li><strong>Right to Withdraw Consent:</strong> Where processing is based on consent (e.g., providing API keys or optional settings), you can withdraw consent by removing that information from the App's settings or ceasing to use the feature.</li>
+            <li><strong>Right to Lodge a Complaint:</strong> You have the right to lodge a complaint with a supervisory authority in your country of residence if you believe that our processing of your personal data infringes GDPR.</li>
+        </ul>
+        <p>To exercise these rights for data managed locally by the App, you can typically do so through the App's interface or by managing the App on your device. For data processed by third-party services, please refer to their respective privacy policies.</p>
+    </div>
+
+    <div class="section">
+        <h2>8. Data Retention</h2>
+        <p>Information stored locally on your device by WebbyGuard (such as settings and bookmarks) is retained until you change or delete it within the App, or until the App is uninstalled from your device.</p>
+        <p>Information sent to third-party services (Google Gemini, Pushover) is subject to their data retention policies. WebbyGuard does not control how long these services retain your data.</p>
+    </div>
+
+    <div class="section">
+        <h2>9. International Data Transfers</h2>
+        <p>When you use WebbyGuard, some information (specifically, snapshot images, Content Check Specification, and your Gemini API Key) is sent to Google's Gemini API for analysis. Similarly, if you configure Pushover notifications, relevant information is sent to Pushover's API. The servers for Google and Pushover may be located outside of the European Economic Area (EEA).</p>
+        <p>By configuring and using these third-party services through WebbyGuard, you acknowledge that your information will be transferred to these services. We rely on the respective data processing agreements and standard contractual clauses (SCCs) or other valid transfer mechanisms provided by Google and Pushover to ensure that your information is protected when transferred outside the EEA. Please refer to their privacy policies for more details on their data handling practices and international transfer safeguards.</p>
+    </div>
+
+    <div class="section">
+        <h2>10. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the new Privacy Policy within the App or on our App Store page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted.</p>
+    </div>
+
+    <div class="section">
+        <h2>11. Contact Us</h2>
+        <p>If you have any questions or concerns about this Privacy Policy or our data handling practices, please contact us:</p>
+        <div class="contact-info">
+            <p><strong>WebbyGuard Support</strong></p>
+            <p>Email: webbyguard-support@tbal.info</p>
+            <p>Developer: Theodoros Balopoulos</p>
+            </div>
+    </div>
+</body>
+</html>
