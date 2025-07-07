@@ -22,7 +22,7 @@
 </head>
 <body>
     <h1>Privacy Policy for WebbyGuard</h1>
-    <p class="date">Last Updated: June 22, 2025</p>
+    <p class="date">Last Updated: July 7, 2025</p>
 
     <div class="section">
         <h2>1. Introduction</h2>
@@ -51,7 +51,7 @@
             <li><strong>Content Check Specification:</strong> Text you provide describing the rules for the content check (e.g., "protect this 8-year-old from harassment, bullying, hate speech..."). This information is stored locally on the child's device (UserDefaults) and is sent to the Google Gemini API as part of the prompt for content safety analysis.</li>
             <li><strong>Google Gemini API Key:</strong> Your personal API key for the Google Gemini service. This is provided by you and stored securely in the Keychain on the child's device. It is required for the content analysis feature and is sent with requests to the Google Gemini API.</li>
             <li><strong>Access PIN:</strong> A mandatory numerical PIN you set to protect access to the WebbyGuard app's settings. This PIN is stored securely in the Keychain on the child's device.</li>
-            <li><strong>Parent Nicknames:</strong> You can set custom nicknames for paired parents in the child's app for easier identification (e.g., "Mom"). These nicknames are stored locally on the child's device (UserDefaults).</li>
+            <li><strong>Parent Nicknames:</strong> You can set custom nicknames for paired parents in the child's app for easier identification (e.g., "Mom"). These nicknames are stored in your private iCloud account via CloudKit.</li>
             <li><strong>Bookmarks:</strong> Websites the user chooses to bookmark within the App. These are stored in the user's private iCloud account using Apple's CloudKit to allow syncing across their devices.</li>
         </ul>
 
@@ -69,11 +69,11 @@
         <h2>4. How We Store Your Information and Security</h2>
         <p>We prioritize the security of the information handled by the WebbyGuard suite.</p>
         <ul>
-            <li><strong>Local Device Storage (UserDefaults):</strong> Non-sensitive settings such as Homepage URL, Content Check Specification, check interval, and parent nicknames are stored in UserDefaults on the child's device.</li>
+            <li><strong>Local Device Storage (UserDefaults):</strong> Non-sensitive settings such as Homepage URL, Content Check Specification, check interval, and whether the glow effect or video blocking are enabled are stored in UserDefaults on the child's device.</li>
             <li><strong>Secure Local Device Storage (Keychain):</strong> Sensitive information such as your Google Gemini API Key and the mandatory Access PIN are stored in the secure Keychain on the child's device.</li>
-            <li><strong>Apple CloudKit Storage:</strong> WebbyGuard uses CloudKit for two primary purposes:
+            <li><strong>Apple CloudKit Storage:</strong> WebbyGuard uses CloudKit for several purposes:
                 <ol>
-                    <li><strong>Private Database:</strong> Your bookmarks are stored in your private iCloud database, accessible only to you and synced across your personal devices. The Child User Name is also stored here.</li>
+                    <li><strong>Private Database:</strong> Your bookmarks, child user name, and parent nicknames are stored in your private iCloud database, accessible only to you and synced across your personal devices.</li>
                     <li><strong>Shared Database:</strong> The pairing relationship and the resulting safety alerts (including snapshots, reasons, and URLs) are managed through a secure `CKShare`, which allows data from the child's private database to be shared only with approved parent accounts.</li>
                     <li><strong>Public Database:</strong> A temporary, expiring record containing a pairing code and share URL is placed in the public database during the pairing process.</li>
                 </ol>
@@ -87,7 +87,7 @@
         <p>WebbyGuard integrates with third-party services that you configure to enable its core functionality. Your use of these services is subject to their respective privacy policies and terms.</p>
         
         <h3>5.1. Google Gemini API</h3>
-        <p>WebbyGuard uses the Google Gemini API to analyze web content snapshots for safety. To use this feature, you must provide your own Google Gemini API Key. When a safety check is performed, the App sends the snapshot image, your Content Check Specification, and your Gemini API Key to Google. Google's handling of this data is governed by Google's Privacy Policy and their API terms of service. <strong>Note:</strong> Use of the Gemini API may incur charges from Google depending on your usage.</p>
+        <p>WebbyGuard uses the Google Gemini API to analyze web content snapshots for safety. To use this feature, you must provide your own Google Gemini API Key. When a safety check is performed, the App sends the snapshot image, your Content Check Specification, your Gemini API Key, and feedback history to Google. Google's handling of this data is governed by Google's Privacy Policy and their API terms of service. <strong>Note:</strong> Use of the Gemini API may incur charges from Google depending on your usage.</p>
         <p>We encourage you to review Google's policies:
             <ul>
                 <li>Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
