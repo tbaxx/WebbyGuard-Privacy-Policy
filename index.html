@@ -5,156 +5,256 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - WebbyGuard</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; color: #333; }
-        h1, h2, h3 { color: #111; }
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --background-color: #ffffff;
+            --text-color: #333;
+            --header-bg: #4A90E2;
+            --header-text: white;
+            --accent-color: #4A90E2;
+            --footer-bg: #4A90E2;
+            --footer-text: white;
+            --section-alt-bg: #f9f9f9;
+            --border-color: #eee;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-color: #121212;
+                --text-color: #e0e0e0;
+                --header-bg: #1e1e1e;
+                --header-text: #e0e0e0;
+                --accent-color: #58a6ff;
+                --footer-bg: #1e1e1e;
+                --footer-text: #e0e0e0;
+                --section-alt-bg: #1e1e1e;
+                --border-color: #333;
+            }
+        }
+
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+             margin: 0;
+             font-size: 2.2em;
+        }
+
+        h1, h2, h3 {
+            color: var(--text-color);
+        }
+        
         h1 { text-align: center; font-size: 1.8em; }
-        h2 { font-size: 1.4em; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-top: 30px;}
+        h2 { font-size: 1.4em; border-bottom: 1px solid var(--border-color); padding-bottom: 5px; margin-top: 30px;}
         h3 { font-size: 1.2em; margin-top: 25px;}
-        .date { text-align: center; color: #555; margin-bottom: 30px; font-size: 0.9em; }
-        .section { margin-bottom: 25px; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 8px; }
-        strong { font-weight: 600; }
-        a { color: #007bff; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .contact-info { background-color: #f9f9f9; padding: 15px; border-radius: 5px; }
+
+        .date {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            background-color: var(--section-alt-bg);
+            padding: 15px;
+            border-radius: 5px;
+        }
+        
+        footer { 
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy for WebbyGuard</h1>
-    <p class="date">Last Updated: July 26, 2025</p>
+    <header>
+        <h1>Privacy Policy</h1>
+    </header>
+    <main>
+        <div class="container">
+            <p class="date">Last Updated: July 26, 2025</p>
 
-    <div class="section">
-        <h2>1. Introduction</h2>
-        <p>Welcome to WebbyGuard! This Privacy Policy explains how the WebbyGuard application suite ("the App," "we," "us," or "our") handles information when you use our products on Apple platforms (iOS, iPadOS, macOS). This policy is specifically for users in Europe and is designed to comply with the General Data Protection Regulation (GDPR).</p>
-        <p>By using the WebbyGuard apps, you, as the parent or legal guardian setting up and configuring the app, agree to the handling of information as described in this policy.</p>
-    </div>
-
-    <div class="section">
-        <h2>2. About the WebbyGuard Suite</h2>
-        <p>WebbyGuard is a two-part system designed to create a safer Browse experience for children:</p>
-        <ul>
-            <li><strong>WebbyGuard:</strong> The child's web browser that uses the Google Gemini API to perform real-time content safety checks on web pages. It is designed to be configured by a parent or guardian.</li>
-            <li><strong>WebbyGuard Parent:</strong> The companion app for parents/guardians to receive real-time safety alerts when the child's browser detects potentially unsafe content and to provide feedback on those alerts.</li>
-        </ul>
-        <p>The system's goal is to provide a safer Browse experience by analyzing snapshots of web content based on configurable rules and, when necessary, blocking the content and alerting the parent.</p>
-    </div>
-
-    <div class="section">
-        <h2>3. Information We Handle</h2>
-        <p>WebbyGuard primarily processes information locally on your device or facilitates the transfer of information to third-party services that you configure. We do not operate our own servers to collect or store your personal data.</p>
-
-        <h3>3.1. Information You (Parent/Guardian) Provide and Configure</h3>
-        <ul>
-            <li><strong>Child User Name:</strong> A name you provide to identify the child's device (e.g., "Liam's iPad"). This name is stored in your private iCloud account (via CloudKit) and is displayed in the WebbyGuard Parent app to identify the source of alerts.</li>
-            <li><strong>Homepage URL:</strong> The starting web address you set for the browser. This is stored locally on the child's device using UserDefaults.</li>
-            <li><strong>Content Check Specification:</strong> Text you provide describing the rules for the content check (e.g., "protect this 8-year-old from harassment, bullying, hate speech..."). This information is stored locally on the child's device (UserDefaults) and is sent to the Google Gemini API as part of the prompt for content safety analysis.</li>
-            <li><strong>Google Gemini API Key:</strong> Your personal API key for the Google Gemini service. This is provided by you and stored securely in the Keychain on the child's device. It is required for the content analysis feature and is sent with requests to the Google Gemini API.</li>
-            <li><strong>Access PIN:</strong> A mandatory numerical PIN you set to protect access to the WebbyGuard app's settings. This PIN is stored securely in the Keychain on the child's device.</li>
-            <li><strong>Parent Nicknames:</strong> You can set custom nicknames for paired parents in the child's app for easier identification (e.g., "Mom"). These nicknames are stored in your private iCloud account via CloudKit.</li>
-            <li><strong>Bookmarks:</strong> Websites the user chooses to bookmark within the App. These are stored in the user's private iCloud account using Apple's CloudKit to allow syncing across their devices.</li>
-        </ul>
-
-        <h3>3.2. Information Processed Automatically for Core Functionality</h3>
-        <ul>
-            <li><strong>Web Content Snapshots:</strong> Periodically, the child's App takes a snapshot (image) of the currently visible web content. This image is sent, along with your Content Check Specification, Gemini API Key, and feedback history, to the Google Gemini API for safety analysis. If the content is deemed unsafe, this snapshot is also shared with paired parent devices via CloudKit.</li>
-            <li><strong>Parent-Child Pairing Information:</strong> To link the child and parent apps, a temporary, 6-digit pairing code is generated by the child's app and stored in CloudKit's public database. The parent enters this code to accept a secure sharing invitation (a `CKShare`), which links the two accounts. The public record is temporary and expires.</li>
-            <li><strong>Safety Alerts Shared with Parents:</strong> When unsafe content is detected on the child's device, an alert record is created in a shared CloudKit data zone. This record contains the <strong>Child User Name</strong>, the <strong>reason</strong> the content was flagged, the <strong>URL</strong> of the webpage, the <strong>timestamp</strong> of the event, and the <strong>snapshot image</strong> of the content. This information is then visible to all paired parents in the WebbyGuard Parent app.</li>
-            <li><strong>Parent Feedback on Alerts:</strong> When a parent provides feedback on an alert (e.g., "thumbs up" or "thumbs down") in the WebbyGuard Parent app, this feedback is saved to the corresponding alert record in the shared CloudKit zone. This feedback history is then included in future requests to the Google Gemini API to help tune and refine its analysis.</li>
-            <li><strong>Browse Activity (Locally):</strong> The WKWebView component used by the App stores Browse history, cache, and cookies locally on the child's device as part of its standard operation. You can clear this data using the "Clear Web Cache" option in the App's settings. WebbyGuard itself does not transmit the Browse history to any external servers, other than the specific URLs of pages that are flagged as unsafe and shared with parents.</li>
-            <li><strong>Technical Data for API Calls:</strong> When WebbyGuard communicates with Google Gemini or Apple CloudKit APIs, standard technical data such as the device's IP address and request headers are transmitted as part of standard internet communication. This is handled by the respective third-party services according to their privacy policies.</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>4. How We Store Your Information and Security</h2>
-        <p>We prioritize the security of the information handled by the WebbyGuard suite.</p>
-        <ul>
-            <li><strong>Local Device Storage (UserDefaults):</strong> Non-sensitive settings such as Homepage URL, Content Check Specification, check interval, and whether the glow effect or video blocking are enabled are stored in UserDefaults on the child's device. The WebbyGuard Parent app also uses UserDefaults to cache alert data for faster display upon launch.</li>
-            <li><strong>Secure Local Device Storage (Keychain):</strong> Sensitive information such as your Google Gemini API Key and the mandatory Access PIN are stored in the secure Keychain on the child's device.</li>
-            <li><strong>Apple CloudKit Storage:</strong> WebbyGuard uses CloudKit for several purposes:
-                <ol>
-                    <li><strong>Private Database:</strong> Your bookmarks, child user name, and parent nicknames are stored in your private iCloud database, accessible only to you and synced across your personal devices.</li>
-                    <li><strong>Shared Database:</strong> The pairing relationship and the resulting safety alerts (including snapshots, reasons, URLs, and feedback) are managed through a secure `CKShare`, which allows data from the child's private database to be shared only with approved parent accounts.</li>
-                    <li><strong>Public Database:</strong> A temporary, expiring record containing a pairing code and share URL is placed in the public database during the pairing process.</li>
-                </ol>
-            </li>
-        </ul>
-        <p>Uninstalling the App will remove all locally stored data. Data in CloudKit is managed by you via the App or your iCloud account settings.</p>
-    </div>
-
-    <div class="section">
-        <h2>5. Third-Party Services</h2>
-        <p>WebbyGuard integrates with third-party services that you configure to enable its core functionality. Your use of these services is subject to their respective privacy policies and terms.</p>
-        
-        <h3>5.1. Google Gemini API</h3>
-        <p>WebbyGuard uses the Google Gemini API to analyze web content snapshots for safety. To use this feature, you must provide your own Google Gemini API Key. When a safety check is performed, the App sends the snapshot image, your Content Check Specification, your Gemini API Key, and your feedback history (the collection of "thumbs up" and "thumbs down" feedback on previous alerts) to Google. Google's handling of this data is governed by Google's Privacy Policy and their API terms of service. <strong>Note:</strong> Use of the Gemini API may incur charges from Google depending on your usage.</p>
-        <p>We encourage you to review Google's policies:
-            <ul>
-                <li>Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
-                <li>Google AI Studio and Gemini API Terms: Please refer to the terms provided by Google when obtaining your API key.</li>
-            </ul>
-        </p>
-        
-        <h3>5.2. Apple CloudKit (Sync and Sharing)</h3>
-        <p>WebbyGuard relies heavily on Apple's CloudKit for its core features:</p>
-         <ul>
-            <li><strong>Bookmark Syncing:</strong> Your bookmarks are stored in your private iCloud database, associated with your Apple ID, allowing them to sync across your devices.</li>
-            <li><strong>Parent-Child Pairing and Alerts:</strong> CloudKit manages the secure sharing relationship between the child and parent apps. When an alert is generated, the event details (including feedback) are stored in a shared zone in your iCloud account, and CloudKit uses the Apple Push Notification Service (APNs) to send a notification to the parent's device, prompting it to fetch the new alert data.</li>
-        </ul>
-        <p>Your use of CloudKit is governed by Apple's terms and privacy policy:
-             <ul>
-                <li>Apple Privacy Policy: <a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank">https://www.apple.com/legal/privacy/en-ww/</a></li>
-            </ul>
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>6. Information Processing Specific to Children</h2>
-        <p>WebbyGuard is designed for use by children, with the setup, configuration, and provision of API keys intended to be managed by a parent or legal guardian. The "Content Check Specification" you provide is used solely to tailor the AI content safety checks for the child's protection and is shared with the Google Gemini API for this purpose.</p>
-        <p>Crucially, when unsafe content is detected, information about the child's Browse activity—specifically the snapshot of the page, the reason it was blocked, and the URL—is intentionally shared with the parent/guardian via the secure CloudKit sharing mechanism. The parent or guardian is responsible for the information entered into the App and for reviewing and providing feedback on the alerts generated.</p>
-    </div>
-
-    <div class="section">
-        <h2>7. Your Rights Under GDPR (For Users in Europe)</h2>
-        <p>As WebbyGuard is exclusively available in Europe, we adhere to the General Data Protection Regulation (GDPR). You (as the parent/guardian) have the following rights regarding the personal data handled by the App:</p>
-        <ul>
-            <li><strong>Right to Access:</strong> You can access most data directly within the App's settings (e.g., homepage URL, child user name, API key, PIN). You can view bookmarks in the child's app and view safety alerts and feedback in the parent's app.</li>
-            <li><strong>Right to Rectification:</strong> You can modify incorrect or incomplete data directly within the App's settings.</li>
-            <li><strong>Right to Erasure ('Right to be Forgotten'):</strong> You can delete data by clearing settings fields, deleting bookmarks, or deleting safety alerts in the parent app. In the child's app, the "Clear All Pairings" function will permanently remove the sharing connection and delete all shared alert data from iCloud. Uninstalling the App also removes all locally stored data. For data sent to Google Gemini, you will need to refer to their policies for erasure.</li>
-            <li><strong>Right to Restrict Processing:</strong> You can restrict processing by not using the app or not completing the initial setup.</li>
-            <li><strong>Right to Data Portability:</strong> For data stored locally and provided by you, you can manually copy this information from the text fields in the settings.</li>
-            <li><strong>Right to Object:</strong> You can object to processing by choosing not to use the app.</li>
-            <li><strong>Right to Withdraw Consent:</strong> Where processing is based on consent (e.g., providing an API key), you can withdraw consent by removing that information from the App's settings.</li>
-            <li><strong>Right to Lodge a Complaint:</strong> You have the right to lodge a complaint with a supervisory authority in your country of residence if you believe our processing of personal data infringes GDPR.</li>
-        </ul>
-        <p>To exercise these rights for data managed by the App, you can typically do so through the App's interface. For data processed by third-party services, please refer to their respective privacy policies.</p>
-    </div>
-
-    <div class="section">
-        <h2>8. Data Retention</h2>
-        <p>Information stored locally on your device by WebbyGuard is retained until you change or delete it, or until the App is uninstalled.</p>
-        <p>Safety alert data and feedback stored in CloudKit are retained until you delete them via the WebbyGuard Parent app or use the "Clear All Pairings" function in the child's app. Bookmarks are retained until you delete them. Information sent to Google Gemini is subject to their data retention policies.</p>
-    </div>
-
-    <div class="section">
-        <h2>9. International Data Transfers</h2>
-        <p>When you use WebbyGuard, some information is sent to third-party APIs. This includes snapshot images and feedback history to Google's Gemini API and alert/bookmark data to Apple's CloudKit. The servers for Google and Apple may be located outside of the European Economic Area (EEA).</p>
-        <p>By configuring and using these third-party services through WebbyGuard, you acknowledge that information will be transferred to these services. We rely on the respective data processing agreements and standard contractual clauses (SCCs) or other valid transfer mechanisms provided by these companies to ensure that your information is protected when transferred outside the EEA. Please refer to their privacy policies for more details.</p>
-    </div>
-
-    <div class="section">
-        <h2>10. Changes to This Privacy Policy</h2>
-        <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the new Privacy Policy within the App or on our App Store page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted.</p>
-    </div>
-
-    <div class="section">
-        <h2>11. Contact Us</h2>
-        <p>If you have any questions or concerns about this Privacy Policy or our data handling practices, please contact us:</p>
-        <div class="contact-info">
-            <p><strong>WebbyGuard Support</strong></p>
-            <p>Email: support@webbyguard.app</p>
+            <div class="section">
+                <h2>1. Introduction</h2>
+                <p>Welcome to WebbyGuard! This Privacy Policy explains how the WebbyGuard application suite ("the App," "we," "us," or "our") handles information when you use our products on Apple platforms (iOS, iPadOS, macOS). This policy is specifically for users in Europe and is designed to comply with the General Data Protection Regulation (GDPR).</p>
+                <p>By using the WebbyGuard apps, you, as the parent or legal guardian setting up and configuring the app, agree to the handling of information as described in this policy.</p>
             </div>
-    </div>
+
+            <div class="section">
+                <h2>2. About the WebbyGuard Suite</h2>
+                <p>WebbyGuard is a two-part system designed to create a safer Browse experience for children:</p>
+                <ul>
+                    <li><strong>WebbyGuard:</strong> The child's web browser that uses the Google Gemini API to perform real-time content safety checks on web pages. It is designed to be configured by a parent or guardian.</li>
+                    <li><strong>WebbyGuard Parent:</strong> The companion app for parents/guardians to receive real-time safety alerts when the child's browser detects potentially unsafe content and to provide feedback on those alerts.</li>
+                </ul>
+                <p>The system's goal is to provide a safer Browse experience by analyzing snapshots of web content based on configurable rules and, when necessary, blocking the content and alerting the parent.</p>
+            </div>
+
+            <div class="section">
+                <h2>3. Information We Handle</h2>
+                <p>WebbyGuard primarily processes information locally on your device or facilitates the transfer of information to third-party services that you configure. We do not operate our own servers to collect or store your personal data.</p>
+
+                <h3>3.1. Information You (Parent/Guardian) Provide and Configure</h3>
+                <ul>
+                    <li><strong>Child User Name:</strong> A name you provide to identify the child's device (e.g., "Liam's iPad"). This name is stored in your private iCloud account (via CloudKit) and is displayed in the WebbyGuard Parent app to identify the source of alerts.</li>
+                    <li><strong>Homepage URL:</strong> The starting web address you set for the browser. This is stored locally on the child's device using UserDefaults.</li>
+                    <li><strong>Content Check Specification:</strong> Text you provide describing the rules for the content check (e.g., "protect this 8-year-old from harassment, bullying, hate speech..."). This information is stored locally on the child's device (UserDefaults) and is sent to the Google Gemini API as part of the prompt for content safety analysis.</li>
+                    <li><strong>Google Gemini API Key:</strong> Your personal API key for the Google Gemini service. This is provided by you and stored securely in the Keychain on the child's device. It is required for the content analysis feature and is sent with requests to the Google Gemini API.</li>
+                    <li><strong>Access PIN:</strong> A mandatory numerical PIN you set to protect access to the WebbyGuard app's settings. This PIN is stored securely in the Keychain on the child's device.</li>
+                    <li><strong>Parent Nicknames:</strong> You can set custom nicknames for paired parents in the child's app for easier identification (e.g., "Mom"). These nicknames are stored in your private iCloud account via CloudKit.</li>
+                    <li><strong>Bookmarks:</strong> Websites the user chooses to bookmark within the App. These are stored in the user's private iCloud account using Apple's CloudKit to allow syncing across their devices.</li>
+                </ul>
+
+                <h3>3.2. Information Processed Automatically for Core Functionality</h3>
+                <ul>
+                    <li><strong>Web Content Snapshots:</strong> Periodically, the child's App takes a snapshot (image) of the currently visible web content. This image is sent, along with your Content Check Specification, Gemini API Key, and feedback history, to the Google Gemini API for safety analysis. If the content is deemed unsafe, this snapshot is also shared with paired parent devices via CloudKit.</li>
+                    <li><strong>Parent-Child Pairing Information:</strong> To link the child and parent apps, a temporary, 6-digit pairing code is generated by the child's app and stored in CloudKit's public database. The parent enters this code to accept a secure sharing invitation (a `CKShare`), which links the two accounts. The public record is temporary and expires.</li>
+                    <li><strong>Safety Alerts Shared with Parents:</strong> When unsafe content is detected on the child's device, an alert record is created in a shared CloudKit data zone. This record contains the <strong>Child User Name</strong>, the <strong>reason</strong> the content was flagged, the <strong>URL</strong> of the webpage, the <strong>timestamp</strong> of the event, and the <strong>snapshot image</strong> of the content. This information is then visible to all paired parents in the WebbyGuard Parent app.</li>
+                    <li><strong>Parent Feedback on Alerts:</strong> When a parent provides feedback on an alert (e.g., "thumbs up" or "thumbs down") in the WebbyGuard Parent app, this feedback is saved to the corresponding alert record in the shared CloudKit zone. This feedback history is then included in future requests to the Google Gemini API to help tune and refine its analysis.</li>
+                    <li><strong>Browse Activity (Locally):</strong> The WKWebView component used by the App stores Browse history, cache, and cookies locally on the child's device as part of its standard operation. You can clear this data using the "Clear Web Cache" option in the App's settings. WebbyGuard itself does not transmit the Browse history to any external servers, other than the specific URLs of pages that are flagged as unsafe and shared with parents.</li>
+                    <li><strong>Technical Data for API Calls:</strong> When WebbyGuard communicates with Google Gemini or Apple CloudKit APIs, standard technical data such as the device's IP address and request headers are transmitted as part of standard internet communication. This is handled by the respective third-party services according to their privacy policies.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. How We Store Your Information and Security</h2>
+                <p>We prioritize the security of the information handled by the WebbyGuard suite.</p>
+                <ul>
+                    <li><strong>Local Device Storage (UserDefaults):</strong> Non-sensitive settings such as Homepage URL, Content Check Specification, check interval, and whether the glow effect or video blocking are enabled are stored in UserDefaults on the child's device. The WebbyGuard Parent app also uses UserDefaults to cache alert data for faster display upon launch.</li>
+                    <li><strong>Secure Local Device Storage (Keychain):</strong> Sensitive information such as your Google Gemini API Key and the mandatory Access PIN are stored in the secure Keychain on the child's device.</li>
+                    <li><strong>Apple CloudKit Storage:</strong> WebbyGuard uses CloudKit for several purposes:
+                        <ol>
+                            <li><strong>Private Database:</strong> Your bookmarks, child user name, and parent nicknames are stored in your private iCloud database, accessible only to you and synced across your personal devices.</li>
+                            <li><strong>Shared Database:</strong> The pairing relationship and the resulting safety alerts (including snapshots, reasons, URLs, and feedback) are managed through a secure `CKShare`, which allows data from the child's private database to be shared only with approved parent accounts.</li>
+                            <li><strong>Public Database:</strong> A temporary, expiring record containing a pairing code and share URL is placed in the public database during the pairing process.</li>
+                        </ol>
+                    </li>
+                </ul>
+                <p>Uninstalling the App will remove all locally stored data. Data in CloudKit is managed by you via the App or your iCloud account settings.</p>
+            </div>
+
+            <div class="section">
+                <h2>5. Third-Party Services</h2>
+                <p>WebbyGuard integrates with third-party services that you configure to enable its core functionality. Your use of these services is subject to their respective privacy policies and terms.</p>
+                
+                <h3>5.1. Google Gemini API</h3>
+                <p>WebbyGuard uses the Google Gemini API to analyze web content snapshots for safety. To use this feature, you must provide your own Google Gemini API Key. When a safety check is performed, the App sends the snapshot image, your Content Check Specification, your Gemini API Key, and your feedback history (the collection of "thumbs up" and "thumbs down" feedback on previous alerts) to Google. Google's handling of this data is governed by Google's Privacy Policy and their API terms of service. <strong>Note:</strong> Use of the Gemini API may incur charges from Google depending on your usage.</p>
+                <p>We encourage you to review Google's policies:
+                    <ul>
+                        <li>Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></li>
+                        <li>Google AI Studio and Gemini API Terms: Please refer to the terms provided by Google when obtaining your API key.</li>
+                    </ul>
+                </p>
+                
+                <h3>5.2. Apple CloudKit (Sync and Sharing)</h3>
+                <p>WebbyGuard relies heavily on Apple's CloudKit for its core features:</p>
+                 <ul>
+                    <li><strong>Bookmark Syncing:</strong> Your bookmarks are stored in your private iCloud database, associated with your Apple ID, allowing them to sync across your devices.</li>
+                    <li><strong>Parent-Child Pairing and Alerts:</strong> CloudKit manages the secure sharing relationship between the child and parent apps. When an alert is generated, the event details (including feedback) are stored in a shared zone in your iCloud account, and CloudKit uses the Apple Push Notification Service (APNs) to send a notification to the parent's device, prompting it to fetch the new alert data.</li>
+                </ul>
+                <p>Your use of CloudKit is governed by Apple's terms and privacy policy:
+                     <ul>
+                        <li>Apple Privacy Policy: <a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank">https://www.apple.com/legal/privacy/en-ww/</a></li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>6. Information Processing Specific to Children</h2>
+                <p>WebbyGuard is designed for use by children, with the setup, configuration, and provision of API keys intended to be managed by a parent or legal guardian. The "Content Check Specification" you provide is used solely to tailor the AI content safety checks for the child's protection and is shared with the Google Gemini API for this purpose.</p>
+                <p>Crucially, when unsafe content is detected, information about the child's Browse activity—specifically the snapshot of the page, the reason it was blocked, and the URL—is intentionally shared with the parent/guardian via the secure CloudKit sharing mechanism. The parent or guardian is responsible for the information entered into the App and for reviewing and providing feedback on the alerts generated.</p>
+            </div>
+
+            <div class="section">
+                <h2>7. Your Rights Under GDPR (For Users in Europe)</h2>
+                <p>As WebbyGuard is exclusively available in Europe, we adhere to the General Data Protection Regulation (GDPR). You (as the parent/guardian) have the following rights regarding the personal data handled by the App:</p>
+                <ul>
+                    <li><strong>Right to Access:</strong> You can access most data directly within the App's settings (e.g., homepage URL, child user name, API key, PIN). You can view bookmarks in the child's app and view safety alerts and feedback in the parent's app.</li>
+                    <li><strong>Right to Rectification:</strong> You can modify incorrect or incomplete data directly within the App's settings.</li>
+                    <li><strong>Right to Erasure ('Right to be Forgotten'):</strong> You can delete data by clearing settings fields, deleting bookmarks, or deleting safety alerts in the parent app. In the child's app, the "Clear All Pairings" function will permanently remove the sharing connection and delete all shared alert data from iCloud. Uninstalling the App also removes all locally stored data. For data sent to Google Gemini, you will need to refer to their policies for erasure.</li>
+                    <li><strong>Right to Restrict Processing:</strong> You can restrict processing by not using the app or not completing the initial setup.</li>
+                    <li><strong>Right to Data Portability:</strong> For data stored locally and provided by you, you can manually copy this information from the text fields in the settings.</li>
+                    <li><strong>Right to Object:</strong> You can object to processing by choosing not to use the app.</li>
+                    <li><strong>Right to Withdraw Consent:</strong> Where processing is based on consent (e.g., providing an API key), you can withdraw consent by removing that information from the App's settings.</li>
+                    <li><strong>Right to Lodge a Complaint:</strong> You have the right to lodge a complaint with a supervisory authority in your country of residence if you believe our processing of personal data infringes GDPR.</li>
+                </ul>
+                <p>To exercise these rights for data managed by the App, you can typically do so through the App's interface. For data processed by third-party services, please refer to their respective privacy policies.</p>
+            </div>
+
+            <div class="section">
+                <h2>8. Data Retention</h2>
+                <p>Information stored locally on your device by WebbyGuard is retained until you change or delete it, or until the App is uninstalled.</p>
+                <p>Safety alert data and feedback stored in CloudKit are retained until you delete them via the WebbyGuard Parent app or use the "Clear All Pairings" function in the child's app. Bookmarks are retained until you delete them. Information sent to Google Gemini is subject to their data retention policies.</p>
+            </div>
+
+            <div class="section">
+                <h2>9. International Data Transfers</h2>
+                <p>When you use WebbyGuard, some information is sent to third-party APIs. This includes snapshot images and feedback history to Google's Gemini API and alert/bookmark data to Apple's CloudKit. The servers for Google and Apple may be located outside of the European Economic Area (EEA).</p>
+                <p>By configuring and using these third-party services through WebbyGuard, you acknowledge that information will be transferred to these services. We rely on the respective data processing agreements and standard contractual clauses (SCCs) or other valid transfer mechanisms provided by these companies to ensure that your information is protected when transferred outside the EEA. Please refer to their privacy policies for more details.</p>
+            </div>
+
+            <div class="section">
+                <h2>10. Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the new Privacy Policy within the App or on our App Store page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted.</p>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Theodoros Balopoulos. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
